@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<!--Author: Sydney Gendron-->
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="58.0" prefWidth="650.0" style="-fx-background-color: #1c1b1f;">
+         <children>
+            <Label prefHeight="58.0" prefWidth="548.0" text="GrandView Movie Theater" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="59.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/logo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </padding>
+            </Label>
+            <Button fx:id="aLoginButton" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #940011;" text="Log In" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label fx:id="aMovieTitleLabel" prefHeight="18.0" prefWidth="742.0" text="Beverly Hills Chihuahua 3: Viva la Fiesta!">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="15.0" left="20.0" top="15.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="TOP_CENTER" prefHeight="330.0" prefWidth="650.0" spacing="25.0">
+         <children>
+            <ImageView fx:id="aMovieImageView" fitHeight="227.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/movie2.png" />
+               </image>
+            </ImageView>
+            <GridPane prefHeight="230.0" prefWidth="362.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="179.2000244140625" minWidth="120.0" prefWidth="176.799951171875" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.80000610351564" minWidth="120.0" prefWidth="184.80004882812503" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="107.8000244140625" minHeight="10.0" prefHeight="26.799999999999997" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="107.8000244140625" minHeight="0.0" prefHeight="25.599993896484374" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="107.8000244140625" minHeight="10.0" prefHeight="31.399981689453128" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="107.8000244140625" minHeight="0.0" prefHeight="26.000015258789062" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="107.8000244140625" minHeight="0.0" prefHeight="20.199981689453125" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="247.20001220703122" minHeight="10.0" prefHeight="184.40001831054684" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="146.0" prefWidth="152.0" spacing="10.0" style="-fx-border-width: 1; -fx-border-color: #000000; -fx-border-radius: 5; -fx-background-color: #DDDBDA;" GridPane.rowIndex="5">
+                     <children>
+                        <Label prefHeight="56.0" prefWidth="120.0" style="-fx-font-family: System; -fx-font-weight: Bold; -fx-font-size: 18;" text="Child Admission" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Franklin Gothic Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="aChildTicketPriceText" strokeType="OUTSIDE" strokeWidth="0.0" text="\$6.00" />
+                        <Button fx:id="aAddChildTicketButton" mnemonicParsing="false" onAction="#onAddChildTicketButtonClick" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #940011; -fx-font-family: Systen; -fx-font-weight: Bold; -fx-font-size: 13;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="Franklin Gothic Medium" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="110.0" prefWidth="152.0" spacing="10.0" style="-fx-border-width: 1; -fx-border-color: #000000; -fx-border-radius: 5; -fx-background-color: #DDDBDA;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <Label prefHeight="57.0" prefWidth="120.0" style="-fx-font-family: System; -fx-font-size: 18; -fx-font-weight: Bold;" text="Adult Admission" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Franklin Gothic Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="aAdultTicketPriceText" strokeType="OUTSIDE" strokeWidth="0.0" text="\$10.00" />
+                        <Button fx:id="aAddAdultTicketButton" mnemonicParsing="false" onAction="#onAddAdultTicketButton" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #940011; -fx-font-weight: Bold; -fx-font-family: System; -fx-font-size: 13;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="Franklin Gothic Medium" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </VBox>
+                  <Label prefHeight="18.0" prefWidth="359.0" style="-fx-font-family: System; -fx-font-size: 18; -fx-font-weight: Bold;" text="Screening Date and Time" GridPane.columnSpan="2">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="22.0" prefWidth="343.0" style="-fx-font-size: 13px; -fx-text-fill: #777777;" text="Note that prices may vary based on demand, date and time." GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                  <Label prefHeight="18.0" prefWidth="404.0" style="-fx-font-family: System; -fx-font-weight: Bold; -fx-font-size: 18;" text="Tickets" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="aScreeningDateAndTimeText" strokeType="OUTSIDE" strokeWidth="0.0" text="2026-11-20, from 4:23:00 PM to 5:42:00 PM" wrappingWidth="282.94766998291016" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="25.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="52.0" prefWidth="650.0" spacing="25.0">
+         <children>
+            <Button fx:id="aPurchaseButton" mnemonicParsing="false" onAction="#onPurchaseButtonClick" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #940011;" text="Purchase" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="aBackButton" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="42.0" prefWidth="121.0" style="-fx-background-color: #1c1b1f;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" />
+   </padding>
+</VBox>

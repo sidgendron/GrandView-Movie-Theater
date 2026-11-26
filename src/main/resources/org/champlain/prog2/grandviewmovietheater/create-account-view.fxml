@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<!--Author: Sydney Gendron-->
 <VBox prefHeight="736.0" prefWidth="650.0" spacing="0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <HBox prefHeight="58.0" prefWidth="650.0" style="-fx-background-color: #1c1b1f;">
       <children>
@@ -18,7 +19,7 @@
             <graphic>
                <ImageView fitHeight="59.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../logo.png" />
+                     <Image url="@Images/logo.png" />
                   </image>
                </ImageView>
             </graphic>

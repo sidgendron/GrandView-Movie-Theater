@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<!--Author: Sydney Gendron-->
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="58.0" prefWidth="650.0" style="-fx-background-color: #1c1b1f;">
@@ -17,7 +18,7 @@
                <graphic>
                   <ImageView fitHeight="59.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../logo.png" />
+                        <Image url="@Images/logo.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -55,22 +56,22 @@
          <children>
             <ImageView fx:id="aMovie1" fitHeight="190.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/movie1.png" />
+                  <Image url="@Images/movie1.png" />
                </image>
             </ImageView>
             <ImageView fx:id="aMovie2" fitHeight="188.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/movie2.png" />
+                  <Image url="@Images/movie2.png" />
                </image>
             </ImageView>
             <ImageView fx:id="aMovie3" fitHeight="188.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/movie3.png" />
+                  <Image url="@Images/movie3.png" />
                </image>
             </ImageView>
             <ImageView fx:id="aMovie4" fitHeight="193.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/movie4.png" />
+                  <Image url="@Images/movie4.png" />
                </image>
             </ImageView>
          </children>
@@ -82,22 +83,22 @@
          <children>
             <ImageView fx:id="aMovie5" fitHeight="185.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/movie5.png" />
+                  <Image url="@Images/movie5.png" />
                </image>
             </ImageView>
             <ImageView fx:id="aMovie6" fitHeight="186.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/movie6.png" />
+                  <Image url="@Images/movie6.png" />
                </image>
             </ImageView>
             <ImageView fx:id="aMovie7" fitHeight="190.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/movie7.png" />
+                  <Image url="@Images/movie7.png" />
                </image>
             </ImageView>
             <ImageView fx:id="aMovie8" fitHeight="206.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/movie8.png" />
+                  <Image url="@Images/movie8.png" />
                </image>
             </ImageView>
          </children>

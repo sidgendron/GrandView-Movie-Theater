@@ -13,6 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<!--Author: Sydney Gendron-->
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="58.0" prefWidth="650.0" style="-fx-background-color: #1c1b1f;">
@@ -21,7 +22,7 @@
                <graphic>
                   <ImageView fitHeight="59.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../logo.png" />
+                        <Image url="@Images/logo.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -54,7 +55,7 @@
          <children>
             <ImageView fx:id="aMovieImageView" fitHeight="227.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Images/movie2.png" />
+                  <Image url="@Images/movie2.png" />
                </image>
             </ImageView>
             <GridPane prefHeight="230.0" prefWidth="362.0">

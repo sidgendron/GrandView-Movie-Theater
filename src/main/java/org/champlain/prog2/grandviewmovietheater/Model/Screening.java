@@ -67,7 +67,7 @@ public class Screening {
     }
 
     /**
-     * Setter method to validate the parameter's value and assign it to {@link #aMovie}.
+     * Setter method to validate the parameter's value and assign it to {@link Screening#aMovie}.
      *
      * @param pMovie Movie object for the assigned movie.
      * @throws IllegalArgumentException If the Movie object is null.
@@ -90,10 +90,10 @@ public class Screening {
     }
 
     /**
-     * Setter method to validate the parameter's value and assign it to {@link #aScreeningDate}.
+     * Setter method to validate the parameter's value and assign it to {@link Screening#aScreeningDate}.
      *
      * @param pScreeningDate ScreeningDate object for the date.
-     * @throws IllegalArgumentException If the ScreeningDate object is null
+     * @throws IllegalArgumentException If the ScreeningDate object is null.
      * @throws IllegalArgumentException If the screening date is before the current date.
      */
     private void setScreeningDate(ScreeningDate pScreeningDate) {
@@ -127,14 +127,15 @@ public class Screening {
         boolean isWeekendScreening = false;
 
         DayOfWeek day = aScreeningDate.getScreeningDate().getDayOfWeek();
-        if (day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY)
+        if (day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY) {
             isWeekendScreening = true;
+        }
 
         return isWeekendScreening;
     }
 
     /**
-     * Setter method to validate the parameter's value and assign it to {@link #aStartTime}.
+     * Setter method to validate the parameter's value and assign it to {@link Screening#aStartTime}.
      *
      * @param pStartTime LocalTime value of the start time.
      * @throws IllegalArgumentException If the screening start time is null.
@@ -171,8 +172,8 @@ public class Screening {
     /**
      * Setter method for the end time.
      * <p>
-     * The method takes the {@link #aStartTime} value and adds to it the {@link #aMovie} length
-     * + 10 minutes (time to prepare for the next screening). Then, assigns the result to {@link #aEndTime}.
+     * The method takes the {@link Screening#aStartTime} value and adds to it the {@link Screening#aMovie} length
+     * + 10 minutes (time to prepare for the next screening). Then, assigns the result to {@link Screening#aEndTime}.
      * </p>
      *
      * @param pStartTime LocalTime value of the end time.
@@ -230,7 +231,7 @@ public class Screening {
     }
 
     /**
-     * Setter method to validate the parameter's value and assign it to {@link #aScreeningRoom}.
+     * Setter method to validate the parameter's value and assign it to {@link Screening#aScreeningRoom}.
      *
      * @param pScreeningRoom ScreeningRoom object for the assigned screening room.
      * @throws IllegalArgumentException If the ScreeningRoom object is null.

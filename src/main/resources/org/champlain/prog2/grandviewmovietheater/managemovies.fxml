@@ -24,7 +24,7 @@
 
         <ImageView fitHeight="40.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@logo.png" />
+                <Image url="@Images/logo.png" />
             </image>
         </ImageView>
 
@@ -62,22 +62,22 @@
                 <Insets bottom="14" left="20" right="20" top="14" />
             </padding>
 
-            <Label style="-fx-font-weight: bold;                           -fx-text-fill: #811F32;" text="Select an Existing com.example.movietheatre.Movie" />
+            <Label style="-fx-font-weight: bold;                           -fx-text-fill: #811F32;" text="Select an Movie" />
 
             <ComboBox fx:id="existingMovieComboBox" maxWidth="Infinity" prefHeight="34" promptText="Choose a movie to update" />
 
-            <Label style="-fx-font-size: 14px;                           -fx-font-weight: bold;" text="com.example.movietheatre.Movie Information" />
+            <Label style="-fx-font-size: 14px;                           -fx-font-weight: bold;" text="Movie Information" />
 
 
             <HBox spacing="12">
 
                 <VBox spacing="4" HBox.hgrow="ALWAYS">
-                    <Label text="com.example.movietheatre.Movie ID" />
-                    <TextField fx:id="movieIdField" prefHeight="34" promptText="com.example.movietheatre.Movie ID" />
+                    <Label text="Movie ID" />
+                    <TextField fx:id="movieIdField" prefHeight="34" promptText="Movie ID" />
                 </VBox>
 
                 <VBox spacing="4" HBox.hgrow="ALWAYS">
-                    <Label text="com.example.movietheatre.Movie Title" />
+                    <Label text="Movie Title" />
                     <TextField fx:id="titleField" prefHeight="34" promptText="Enter movie title" />
                 </VBox>
 
@@ -109,7 +109,7 @@
             <TextArea fx:id="descriptionArea" prefHeight="65" promptText="Write a short description of the movie..." wrapText="true" />
 
 
-            <Label style="-fx-font-weight: bold;                           -fx-text-fill: #811F32;" text="com.example.movietheatre.Movie Poster" />
+            <Label style="-fx-font-weight: bold;                           -fx-text-fill: #811F32;" text="Movie Poster" />
 
             <HBox alignment="CENTER_LEFT" spacing="18" style="-fx-background-color: #FAF6F7;                          -fx-background-radius: 8;">
 
@@ -132,9 +132,9 @@
 
             <HBox spacing="12">
 
-                <Button fx:id="addMovieButton" maxWidth="Infinity" prefHeight="40" style="-fx-background-color: #811F32;                                -fx-text-fill: white;                                -fx-font-weight: bold;                                -fx-background-radius: 5;" text="Add com.example.movietheatre.Movie" HBox.hgrow="ALWAYS" />
+                <Button fx:id="addMovieButton" maxWidth="Infinity" prefHeight="40" style="-fx-background-color: #811F32;                                -fx-text-fill: white;                                -fx-font-weight: bold;                                -fx-background-radius: 5;" text="Add Movie" HBox.hgrow="ALWAYS" />
 
-                <Button fx:id="updateMovieButton" maxWidth="Infinity" prefHeight="40" style="-fx-background-color: #811F32;                                -fx-text-fill: white;                                -fx-font-weight: bold;                                -fx-background-radius: 5;" text="Update com.example.movietheatre.Movie" HBox.hgrow="ALWAYS" />
+                <Button fx:id="updateMovieButton" maxWidth="Infinity" prefHeight="40" style="-fx-background-color: #811F32;                                -fx-text-fill: white;                                -fx-font-weight: bold;                                -fx-background-radius: 5;" text="Update Movie" HBox.hgrow="ALWAYS" />
 
             </HBox>
 

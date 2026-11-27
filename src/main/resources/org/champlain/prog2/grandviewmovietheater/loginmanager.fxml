@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="650.0" spacing="0" xmlns="http://javafx.com/javafx/27.0.1.1" xmlns:fx="http://javafx.com/fxml/1">
+
+
+    <HBox alignment="CENTER_LEFT" prefHeight="75" spacing="12" style="-fx-background-color: #171717;">
+
+        <padding>
+            <Insets left="20" right="20" />
+        </padding>
+
+        <ImageView fitHeight="55.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@logo.png" />
+            </image>
+        </ImageView>
+
+              <Label text="GrandView Theatre" textFill="WHITE">
+            <font>
+                <Font name="Bernard MT Condensed" size="32.0" />
+            </font>
+        </Label>
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Button style="-fx-background-color: transparent;                        -fx-text-fill: white;" text="Back to Movies" />
+
+    </HBox>
+
+
+
+    <VBox alignment="CENTER" spacing="18" style="-fx-background-color: #F7F7F7;" VBox.vgrow="ALWAYS">
+
+        <VBox alignment="CENTER" maxWidth="380" spacing="15" style="-fx-background-color: white;                      -fx-background-radius: 8;                      -fx-border-color: #DDDDDD;                      -fx-border-radius: 8;">
+
+            <padding>
+                <Insets bottom="35" left="30" right="30" top="35" />
+            </padding>
+
+            <Label style="-fx-font-size: 26px;                           -fx-font-weight: bold;" text="Welcome Back" />
+
+            <Label style="-fx-font-size: 13px;                           -fx-text-fill: #777777;" text="Log in to your account" />
+
+            <VBox spacing="7">
+                <Label style="-fx-font-weight: bold;" text="Username or Email" />
+
+                <TextField fx:id="usernameField" prefHeight="40" promptText="Enter username or email" />
+            </VBox>
+
+            <VBox spacing="7">
+                <Label style="-fx-font-weight: bold;" text="Password" />
+
+                <PasswordField fx:id="passwordField" prefHeight="40" promptText="Enter password" />
+            </VBox>
+
+            <Label fx:id="messageLabel" style="-fx-text-fill: red;" text="" />
+
+            <Button fx:id="loginButton" maxWidth="Infinity" prefHeight="42" style="-fx-background-color: #811F32;                            -fx-text-fill: white;                            -fx-font-weight: bold;                            -fx-background-radius: 5;" text="Login" />
+
+            <Label style="-fx-text-fill: #666666;" text="Don't have an account?" />
+
+            <Button fx:id="signUpButton" style="-fx-background-color: transparent;                            -fx-text-fill: #811F32;                            -fx-font-weight: bold;" text="Create an Account" />
+
+        </VBox>
+
+    </VBox>
+
+</VBox>

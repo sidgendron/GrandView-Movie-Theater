@@ -21,7 +21,7 @@
 
         <ImageView fitHeight="55.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@logo.png" />
+                <Image url="@Images/logo.png" />
             </image>
         </ImageView>
 
@@ -44,7 +44,7 @@
             <Insets bottom="25" left="35" right="35" top="35" />
         </padding>
 
-        <Label style="-fx-font-size: 27px;                       -fx-font-weight: bold;                       -fx-text-fill: #171717;" text="com.example.movietheatre.Manager Dashboard" />
+        <Label style="-fx-font-size: 27px;                       -fx-font-weight: bold;                       -fx-text-fill: #171717;" text="Manager Dashboard" />
 
         <Label style="-fx-font-size: 14px;                       -fx-text-fill: #777777;" text="Welcome to the management section." />
 

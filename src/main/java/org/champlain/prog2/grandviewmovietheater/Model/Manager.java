@@ -2,13 +2,43 @@ package org.champlain.prog2.grandviewmovietheater.Model;
 
 import java.util.regex.Pattern;
 
+/**
+ * Represents a manager, which has an ID, an email, and a password.
+ *
+ * @author Sydney Gendron
+ */
 public class Manager extends User {
+    /**
+     * Holds the manager.
+     */
     private static Manager aManager;
 
+    /**
+     * Constructor that initializes the inherited {@link User} (class it extends) attributes.
+     *
+     * @param pUserID int value for the user ID.
+     * @param pEmail String value of the email.
+     * @param pPassword String value of the password.
+     */
     private Manager(int pUserID, String pEmail, String pPassword) {
         super(pUserID, pEmail, pPassword);
     }
 
+    /**
+     * Returns the manager.
+     * <p>
+     *     In addition, if no Manager exists, it creates a Manager instance.
+     * </p>
+     *
+     * @param pUserID int value for the user ID.
+     * @param pEmail String object for the email.
+     * @param pPassword String object for the password.
+     * @throws IllegalArgumentException If the user ID is below zero.
+     * @throws IllegalArgumentException If the email is null or blank.
+     * @throws IllegalArgumentException If the email address has an incorrect format.
+     * @throws IllegalArgumentException If the password is null or blank.
+     * @return The manager as a Manager object.
+     */
     public static Manager getManager(int pUserID, String pEmail, String pPassword) {
         if (aManager == null) {
             if (pUserID < 0) {

@@ -2,6 +2,7 @@ package org.champlain.prog2.grandviewmovietheater.Model;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
@@ -38,11 +39,11 @@ public class Screening {
     /**
      * Saves the screening's start time. It cannot be null or before 3PM during the week/10AM during the weekend.
      */
-    private LocalTime aStartTime;
+    private LocalDateTime aStartDateTime;
     /**
      * Saves the screening's end time. It cannot be null or after midnight during the week/2AM during the weekend.
      */
-    private LocalTime aEndTime;
+    private LocalDateTime aEndDateTime;
     /**
      * Saves the screening's assigned screening room. It cannot be null.
      */
@@ -61,8 +62,8 @@ public class Screening {
     public Screening(Movie pMovie, ScreeningDate pScreeningDate, LocalTime pStartTime, ScreeningRoom pScreeningRoom) {
         this.setMovie(pMovie);
         this.setScreeningDate(pScreeningDate);
-        this.setStartTime(pStartTime);
-        this.setEndTime(pStartTime);
+        this.setStartDateTime(pStartTime);
+        this.setEndDateTime();
         this.setScreeningRoom(pScreeningRoom);
     }
 
@@ -135,14 +136,14 @@ public class Screening {
     }
 
     /**
-     * Setter method to validate the parameter's value and assign it to {@link Screening#aStartTime}.
+     * Setter method to validate the parameter's value and assign it to {@link Screening#aStartDateTime}.
      *
      * @param pStartTime LocalTime value of the start time.
      * @throws IllegalArgumentException If the screening start time is null.
      * @throws IllegalArgumentException If the screening begins before 10AM during the weekend.
      * @throws IllegalArgumentException If the screening begins before 3PM during the week.
      */
-    private void setStartTime(LocalTime pStartTime) {
+    private void setStartDateTime(LocalTime pStartTime) {
         if (pStartTime == null) {
             throw new IllegalArgumentException("The screening start time cannot be null.");
         }
@@ -157,66 +158,44 @@ public class Screening {
             }
         }
 
-        this.aStartTime = pStartTime;
+        this.aStartDateTime = LocalDateTime.of(aScreeningDate.getScreeningDate(), pStartTime);
     }
 
     /**
      * Getter method to get the start time.
      *
-     * @return The start time as a LocalTime object.
+     * @return The start time as a LocalDateTime object.
      */
-    public LocalTime getStartTime() {
-        return this.aStartTime;
+    public LocalDateTime getStartDateTime() {
+        return this.aStartDateTime;
     }
 
     /**
      * Setter method for the end time.
      * <p>
-     * The method takes the {@link Screening#aStartTime} value and adds to it the {@link Screening#aMovie} length
-     * + 10 minutes (time to prepare for the next screening). Then, assigns the result to {@link Screening#aEndTime}.
+     * The method takes the {@link Screening#aStartDateTime} value and adds to it the {@link Screening#aMovie} length
+     * + 10 minutes (time to prepare for the next screening). Then, assigns the result to {@link Screening#aEndDateTime}.
      * </p>
      *
-     * @param pStartTime LocalTime value of the end time.
-     * @throws IllegalArgumentException If the start time is null.
-     * @throws IllegalArgumentException If the screening ends after midnight during the week.
      * @throws IllegalArgumentException If the screening ends after 2AM during the weekend.
-     * @throws IllegalArgumentException If the screening ends before the screening begins during the weekend (10AM).
-     * @throws IllegalArgumentException If the screening ends before the screening begins during the week (3PM).
+     * @throws IllegalArgumentException If the screening ends after midnight during the week.
      */
-    private void setEndTime(LocalTime pStartTime) {
-        if (pStartTime == null) {
-            throw new IllegalArgumentException("The screening start time cannot be null.");
-        }
+    private void setEndDateTime() {
+        int movieLength = this.aMovie.getMovieLength();
 
-        int movieLength = aMovie.getMovieLength();
+        this.aEndDateTime = this.aStartDateTime.plusMinutes(movieLength + 10);
 
-        this.aEndTime = pStartTime.plusMinutes(movieLength + 10);
+        LocalDate screeningDate = aScreeningDate.getScreeningDate();
+        LocalDateTime weekendEndTime = screeningDate.plusDays(1).atTime(WEEKEND_END);
+        LocalDateTime weekEndTime = screeningDate.plusDays(1).atTime(WEEK_END);
 
-        // Check whether the end time passes midnight (so, on the next day).
-        if (aEndTime.isBefore(pStartTime)) {
-            // Get the previous day. First by calling getScreeningDate() of the Screening class, then of the ScreeningDate class.
-            DayOfWeek day = getScreeningDate().getScreeningDate().getDayOfWeek();
-
-            // Check if the previous day was during the weekend.
-            boolean isWeekendScreening = day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY;
-
-            // If it was during the week, throw an error.
-            if (!isWeekendScreening) {
-                throw new IllegalArgumentException("Week screenings cannot end after midnight.");
-            }
-
-            // Otherwise, throw an error if the end time is after 2AM.
-            if (aEndTime.isAfter(WEEKEND_END)) {
+        if (isWeekend()) {
+            if (aEndDateTime.isAfter(weekendEndTime)) {
                 throw new IllegalArgumentException("Weekend screenings cannot end after 2AM.");
             }
-        // If not, check if the end time is before the screenings begin.
         } else {
-            if (isWeekend()) {
-                if (aEndTime.isBefore(WEEKEND_START))
-                    throw new IllegalArgumentException("Weekend screenings begin at 10AM, they cannot end before then!");
-            } else {
-                if (aEndTime.isBefore(WEEK_START))
-                    throw new IllegalArgumentException("Week screenings begin at 3PM, they cannot end before then!");
+            if (aEndDateTime.isAfter(weekEndTime)) {
+                throw new IllegalArgumentException("Week screenings cannot end after midnight.");
             }
         }
     }
@@ -224,10 +203,10 @@ public class Screening {
     /**
      * Getter method to get the end time.
      *
-     * @return The end time as a LocalTime object.
+     * @return The end time as a LocalDateTime object.
      */
-    public LocalTime getEndTime() {
-        return this.aEndTime;
+    public LocalDateTime getEndDateTime() {
+        return this.aEndDateTime;
     }
 
     /**

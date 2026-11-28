@@ -68,7 +68,7 @@ public class ScreeningDate {
      *
      * @param pCurrentDate LocalDate object for the current date.
      * @throws IllegalArgumentException If the current date is null.
-     * @return True if the screening date is not in the past, false otherwise.
+     * @return True if the screening date is in the past, false otherwise.
      */
     public boolean isBefore(LocalDate pCurrentDate) {
         if (pCurrentDate == null) {

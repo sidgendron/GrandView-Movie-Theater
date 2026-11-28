@@ -11,7 +11,7 @@ public class Ticket {
     /**
      * Holds the purchase date and time (when the ticket is created).
      */
-    private final LocalDateTime aPurchaseDate;
+    private final LocalDateTime aPurchaseDateAndTime;
     /**
      * Saves the ticket type. It cannot be null.
      */
@@ -29,7 +29,7 @@ public class Ticket {
      * Constructor to create a new instance of Ticket.
      * <p>
      *      It calls each parameter's respective setter method to assign the object's attributes.
-     *      It also initializes the {@link Ticket#aPurchaseDate}.
+     *      It also initializes the {@link Ticket#aPurchaseDateAndTime}.
      * </p>
      *
      * @param pTicketType TicketType value of the ticket type.
@@ -40,7 +40,7 @@ public class Ticket {
         this.setTicketType(pTicketType);
         this.setCustomer(pCustomer);
         this.setScreening(pScreening);
-        this.aPurchaseDate = LocalDateTime.now();
+        this.aPurchaseDateAndTime = LocalDateTime.now();
     }
 
     /**
@@ -117,7 +117,7 @@ public class Ticket {
      *
      * @return The purchase date and time as a LocalDateTime object.
      */
-    public LocalDateTime getPurchaseDate() {
-        return this.aPurchaseDate;
+    public LocalDateTime getPurchaseDateAndTime() {
+        return this.aPurchaseDateAndTime;
     }
 }
